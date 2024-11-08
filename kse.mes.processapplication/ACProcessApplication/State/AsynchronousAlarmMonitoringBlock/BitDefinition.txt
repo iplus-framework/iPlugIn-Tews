@@ -1,6 +1,0 @@
-﻿
-
-
-Author:	@aagincic
-Date:	2016-04-07
-Name:	Generator BitAccessForInt16 enumerations from CSV alfra doc def
