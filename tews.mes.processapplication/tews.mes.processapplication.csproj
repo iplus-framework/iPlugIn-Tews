@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\iPlus\Directory.Build.props" />
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>$(DefaultNetCoreTargetFramework)</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>tews.mes.processapplication</AssemblyTitle>
@@ -10,10 +11,10 @@
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <IPlusIncludeDir>..\..\iPlusMES\bin\Debug\net8.0</IPlusIncludeDir>
+    <IPlusIncludeDir>..\..\iPlusMES\bin\Debug\$(DefaultNetCoreTargetFramework)</IPlusIncludeDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <IPlusIncludeDir>..\..\iPlusMES\bin\Release\net8.0</IPlusIncludeDir>
+    <IPlusIncludeDir>..\..\iPlusMES\bin\Release\$(DefaultNetCoreTargetFramework)</IPlusIncludeDir>
   </PropertyGroup>
   <ItemGroup>
     <None Update="readme.md">
@@ -50,9 +51,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(IPlusIncludeDir)\gip.core.processapplication.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="VBControlScripts\2022-09-27 07-41_dlisak.zip">
